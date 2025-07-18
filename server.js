@@ -10,6 +10,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Root route for health check or info
+app.get('/', (req, res) => {
+  res.send('Expense Tracker Backend is running!');
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/expenses', expenseRoutes);
 
