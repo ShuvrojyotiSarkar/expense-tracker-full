@@ -1,4 +1,4 @@
-const API = 'http://127.0.0.1:5000/api';
+const API = 'https://expense-tracker-full-04zu.onrender.com';
 
 const headers = () => ({
   'Content-Type': 'application/json',
