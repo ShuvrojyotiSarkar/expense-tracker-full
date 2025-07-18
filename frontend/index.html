@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="auth-wrapper">
+      <div class="toggle-buttons">
+        <button id="show-login" class="toggle-btn active">Log In</button>
+        <button id="show-signup" class="toggle-btn">Sign Up</button>
+      </div>
+
+      <form id="login-form" class="auth-form">
+        <h2>Log In</h2>
+        <input type="email" id="login-email" placeholder="Email" required />
+        <input type="password" id="login-password" placeholder="Password" required />
+        <button type="submit">Log In</button>
+      </form>
+
+      <form id="signup-form" class="auth-form hidden">
+        <h2>Sign Up</h2>
+        <input type="email" id="signup-email" placeholder="Email" required />
+        <input type="password" id="signup-password" placeholder="Password" required />
+        <button type="submit">Sign Up</button>
+      </form>
+
+      <form id="otp-form" class="auth-form hidden">
+        <h2>Verify OTP</h2>
+        <input type="text" id="otp-code" placeholder="Enter OTP" required />
+        <button type="submit">Verify</button>
+        <button type="button" id="resend-otp-btn" class="resend-btn">Resend OTP</button>
+      </form>
+    </div>
+
+    <div id="app" class="app hidden">
+      <button class="logout-btn" id="logout-btn">Logout</button>
+
+      <form id="expense-form" class="expense-form">
+        <h2>Add/Edit Expense</h2>
+        <input type="number" id="amount" placeholder="Amount" required min="0.01" step="0.01" />
+        <select id="category" required>
+          <option value="" disabled selected>Select Category</option>
+          <option>Food</option>
+          <option>Transport</option>
+          <option>Entertainment</option>
+          <option>Utilities</option>
+        </select>
+        <input type="text" id="description" placeholder="Description (optional)" />
+        <input type="date" id="date" required />
+        <input type="hidden" id="expense-id" />
+        <button type="submit">Save Expense</button>
+      </form>
+
+      <div class="filter-section">
+        <h2>Filter Expenses</h2>
+        <input type="date" id="filter-start" />
+        <input type="date" id="filter-end" />
+        <button id="filter-btn">Apply Filter</button>
+      </div>
+
+      <h2>Your Expenses</h2>
+      <div id="expense-list" class="expense-list"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #5a2a83, #a35ccc);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.container {
+  background: rgba(255 255 255 / 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 420px;
+  width: 100%;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.auth-wrapper {
+  margin-bottom: 2rem;
+}
+
+.toggle-buttons {
+  display: flex;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #d7c6e1;
+  background: rgba(255 255 255 / 0.1);
+}
+
+.toggle-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  color: #d7c6e1;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 600;
+}
+
+.toggle-btn.active {
+  background: #6e3ba1;
+  color: white;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-form input {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+}
+
+.auth-form button {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  background: #6e3ba1;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-form button:hover:not(:disabled) {
+  background: #8e58c7;
+}
+
+.auth-form button:disabled {
+  background: #5a2a83;
+  cursor: not-allowed;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.app {
+  margin-top: 1rem;
+}
+
+.logout-btn {
+  background: #7c4dff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background: #9a6dff;
+}
+
+.expense-form {
+  background: rgba(255 255 255 / 0.15);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.expense-form input,
+.expense-form select,
+.expense-form button {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.expense-form input,
+.expense-form select {
+  background: #fff;
+  color: #333;
+}
+
+.expense-form button {
+  background: #9b59b6;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.expense-form button:hover:not(:disabled) {
+  background: #b87bcf;
+}
+
+.expense-form button:disabled {
+  background: #7a3986;
+  cursor: not-allowed;
+}
+
+.filter-section {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-section input[type="date"] {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.filter-section button {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #8e44ad;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-section button:hover:not(:disabled) {
+  background: #a569bd;
+}
+
+.filter-section button:disabled {
+  background: #6f3485;
+  cursor: not-allowed;
+}
+
+.expense-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.expense-item {
+  background: rgba(255 255 255 / 0.15);
+  border-left: 5px solid #9b59b6;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.expense-item h3 {
+  margin: 0;
+  font-weight: 700;
+}
+
+.expense-item p {
+  margin: 0;
+  font-style: italic;
+  color: #d7c6e1;
+}
+
+.expense-item small {
+  color: #d7c6e1;
+}
+
+.expense-item button {
+  background: transparent;
+  border: none;
+  color: #d7c6e1;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 1rem;
+  padding: 0;
+  align-self: flex-start;
+  transition: color 0.3s;
+}
+
+.expense-item button:hover {
+  color: #f0c;
+}
+
+.resend-btn {
+  background: none;
+  border: none;
+  color: #d7c6e1;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  align-self: flex-start;
+  text-decoration: underline;
+  padding: 0;
+  transition: color 0.3s;
+}
+
+.resend-btn:hover {
+  color: #f0c;
+}
+
+/* Scrollbar styling for expense list */
+.expense-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.expense-list::-webkit-scrollbar-thumb {
+  background-color: #9b59b6;
+  border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .toggle-buttons {
+    flex-direction: column;
+  }
+
+  .toggle-btn {
+    padding: 0.6rem 0;
+    font-size: 0.9rem;
+    border-radius: 0;
+  }
+
+  .toggle-btn.active {
+    border-radius: 0;
+  }
+
+  .auth-form input,
+  .auth-form button {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .expense-form {
+    padding: 0.75rem;
+  }
+
+  .expense-form input,
+  .expense-form select,
+  .expense-form button {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-section input[type="date"],
+  .filter-section button {
+    width: 100%;
+  }
+
+  .expense-list {
+    max-height: 250px;
+  }
+
+  .expense-item {
+    padding: 0.75rem;
+  }
+
+  .expense-item button {
+    margin-right: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .resend-btn {
+    font-size: 0.9rem;
+  }
+}
